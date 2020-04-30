@@ -10,30 +10,38 @@ Avril 2020
 def main():
 	# Les étapes de l'algorithme Base 64
 	while True:
+
 		pass
 		user_input = input()
 
 		# 1. Conversion de la chaîne en liste
 		elements_list = list(user_input)
+
 		print(elements_list) 
 
 		# 2. Conversion de chaque élément de la liste en entier
 		int_list = []
+
 		for ele in elements_list:
 			int_list.extend(ord(num) for num in ele)
+
 		print(int_list)
 
 		# 3. Conversion de chaque entier de la liste en 8 bits
 		binary_list = list(map(lambda x: format(x,'08b'),int_list))
+
 		print(binary_list)
 
 		# 4. Conversion de la liste en chaîne
 		binary_string = ''.join(binary_list)
+
 		print(binary_string)
 
 		# 5. Conversion de la chaîne en une liste d'éléments de longueur six cadrés à droite
-		new_int_list = [int(binary_string[i:i+6], 2) for i in range(0, len(binary_string), 6)] 
+		new_int_list = [int(binary_string[i:i+6], 2) for i in range(0, len(binary_string), 6)]
+
 		new_binary_list = list(map(lambda x: format(x,'06b'),new_int_list))
+
 		print(new_binary_list)
 
 		# 6. Conversion des éléments en entier
@@ -62,18 +70,6 @@ def main():
 		print(new_elements_list)
 
 		"""
-
-
-
-
-
-
-
-		
-
-
-
-
 
 if __name__ == '__main__':
     main()
